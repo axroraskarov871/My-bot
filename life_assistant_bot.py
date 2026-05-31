@@ -16,7 +16,10 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 YOUR_CITY = os.getenv("CITY", "Tashkent")
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash",
+    generation_config={"api_version": "v1"}  # API'ni barqaror v1 talqiniga majburlash
+)
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
