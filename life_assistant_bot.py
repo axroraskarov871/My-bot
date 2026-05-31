@@ -15,11 +15,11 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 YOUR_CITY = os.getenv("CITY", "Tashkent")
-genai.configure(api_key=GEMINI_API_KEY, transport="rest") # transportni belgilash yordam berishi mumkin
-model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
-    # Agar kutubxona qo'llab-quvvatlasa, api_version'ni majburiy ko'rsatamiz:
-)
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+# ... pastki qatorlar davom etadi
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
