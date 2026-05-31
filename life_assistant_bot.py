@@ -16,9 +16,9 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 YOUR_CITY = os.getenv("CITY", "Tashkent")
 
-# Gemini modelini sozlash (Eski kutubxonalarda ham ishlovchi eng barqaror variant)
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.0-pro")
+# Mana shu 2 qatorni xuddi shunday joylashtiring:
+genai.configure(api_key=GEMINI_API_KEY, transport="rest", client_options={"api_version": "v1"})
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
