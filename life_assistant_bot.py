@@ -27,13 +27,13 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "BU_YERGA_TELEGRAM_TOKENINGIZ")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "BU_YERGA_GEMINI_API_KEYINGIZ")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "")  # openweathermap.org dan bepul oling
-YOUR_CITY = os.getenv("CITY", "Tashkent")  # Shahringizni yozing
+UR_CITY = os.getenv("CITY", "Tashkent")  # Shahringizni yozing
 
 # ============================================================
 # GEMINI SOZLASH
 # ============================================================
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Logging
 logging.basicConfig(
