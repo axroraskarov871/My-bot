@@ -17,7 +17,7 @@ YOUR_CITY = os.getenv("CITY", "Tashkent")
 
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+    model_name="gemini-1.0-pro",
     generation_config={"api_version": "v1"}  # API'ni barqaror v1 talqiniga majburlash
 )
 
