@@ -8,7 +8,7 @@ import logging
 import random
 from datetime import datetime
 from dotenv import load_dotenv
-from google import genai
+import google.generativeai as genai
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import (
     Application, CommandHandler, MessageHandler,
